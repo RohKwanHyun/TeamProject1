@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>채용공고 리스트</h1>
+<hr>
+<table border="1">
+	<thead>
+		<tr>
+			<td>번호</td>
+			<td>제목</td>
+			<td>기업명</td>
+			<td>위치</td>
+			<td>상태</td>
+			<td>마감일</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="list : ${list}">
+			<td>[[${list.postNo}]]</td>
+			<td><a href="jobPosting/detail/[[${list.postNo}]]">[[${list.title}]]</a></td>
+			<td>[[${list.comName}]]</td>
+			<td>[[${list.location}]]</td>
+			<td>[[${list.status}]]</td>
+			<td>[[${list.deadline}]]</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
